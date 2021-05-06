@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    //Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<div class="w3ls-banner">
+
+    <div class="heading">
+
+    </div>
+
+    <div class="container_1">
+        <div class="agile-form">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    <div class="col-md-12 mb">
+                        <div class="form-group">
+                            <label class="form-label">
+                                ROLE
+                                <span class="form-required"> * </span>
+                            </label>
+                            <div class="form-input">
+                                <select class="form-dropdown rolesel" name="role">
+                                    <option value="">Select Role</option>
+                                    <option value="Admin"> Admin </option>
+                                    <option value="Volunteer"> Volunteer </option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb">
+                        <div class="form-group">
+                            <label class="form-label">
+                                ID                                <span class="form-required"> * </span>
+                            </label>
+                            <div class="form-input">
+                                <input type="text" id="Id" name="Id" placeholder="ID">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Password
+                                <span class="form-required"> * </span>
+                            </label>
+                            <div class="form-input">
+                                <input type="password" name="Password" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="LOGIN" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('.datepicker').datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-60:+0"
+            });
+
+        });
+    </script>
+
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+
+            };
+        </script>
+    }
+}
