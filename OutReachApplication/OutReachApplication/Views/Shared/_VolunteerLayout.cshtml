@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - OutReach Application</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+       #EndNav,#TopNav{
+           width:100%;
+       }
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <div class="navbar navbar-collapse-xs navbar-expand-md fixed-top bg-info">
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse" id="TopNav"> 
+
+                <ul class="nav navbar-nav navbar-expand-md navbar-right">
+                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    @*<li><a href="@Url.Action("VolunteerAttendance", "Volunteer")"><span class="glyphicon glyphicon-ok"></span> Attendance</a></li>
+                    <li><a href="@Url.Action("EventIndex", "Volunteer")"><span class="glyphicon glyphicon-eye-open"></span> View Event</a></li>
+                    <li><a href="@Url.Action("SearchByLocation", "Volunteer")"><span class="glyphicon glyphicon-eye-open"></span> By Location</a></li>
+                    <li><a href="@Url.Action("SearchByEventType", "Volunteer")"><span class="glyphicon glyphicon-eye-open"></span> By EventType</a></li>
+                    <li><a href="@Url.Action("VolunteerFeedback", "Volunteer")"><span class="glyphicon glyphicon-eye-open"></span> Feedback</a></li>*@
+                    <li><a href="@Url.Action("Logout","Login")"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                </ul>
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div>&copy; @DateTime.Now.Year - OutReach Application</div>
+        </footer>
+    </div>
+    <div>
+
+
+
+
+    </div>
+
+    <div class=" container bg-info " id="EndNav">
+        <ul class="nav navbar-nav">
+
+            <li><a href="@Url.Action("About","Home")"><span class="glyphicon glyphicon-book"></span> About Us</a></li>
+            <li><a href="@Url.Action("Contact","Home")"><span class="glyphicon glyphicon-earphone"></span> Contact Us</a></li>
+        </ul>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Register";
-    //Layout = "~/Views/Shared/_Home.cshtml";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
 }
 
 <style>
@@ -24,6 +24,8 @@
         font-weight: bold;
         color: red;
     }
+
+    
 </style>
 <div class="w3ls-banner">
     <div class="heading">
@@ -67,10 +69,9 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2 required" })
-                        <div class="col-md-10">
-                            @*@Html.DropDownList("Departments", new List<SelectListItem>\{new SelectListItem { Text = "Male", Value = "male", Selected=true},new SelectListItem { Text = "Female", Value = "Female"},new SelectListItem { Text = "Others", Value = "Others"}}, "Select Department") *@
-                            @*@Html.EditorFor(model => model.User_Gender, new { htmlAttributes = new { @class = "form-control" } })*@
-                            @Html.DropDownListFor(model => model.Gender, new List<SelectListItem> { new SelectListItem { Text = "Male", Value = "male" }, new SelectListItem { Text = "Female", Value = "Female" }, new SelectListItem { Text = "Others", Value = "Others" } }, "Select Gender")@*, Selected = true*@
+                        <div class="col-md-10 row-md-10">
+                           
+                           @Html.DropDownListFor(model => model.Gender, new List<SelectListItem> { new SelectListItem { Text = "Male", Value = "male" }, new SelectListItem { Text = "Female", Value = "Female" }, new SelectListItem { Text = "Others", Value = "Others" } }, "Select Gender", new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -94,7 +95,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.VolunteerPassword, htmlAttributes: new { @class = "control-label col-md-2 required" })
                         <div class="col-md-10">
-                            @Html.PasswordFor(model => model.VolunteerPassword, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.VolunteerPassword, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.VolunteerPassword, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -102,7 +103,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2 required" })
                         <div class="col-md-10">
-                            @Html.PasswordFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -153,7 +154,3 @@
 
 
 }
-
-<div>
-    @Html.ActionLink("Back to Home Page", "Index", "Home")
-</div>

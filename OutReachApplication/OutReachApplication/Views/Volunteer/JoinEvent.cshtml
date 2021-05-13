@@ -1,0 +1,73 @@
+﻿@model OutReachApplication.Models.EventDetail
+
+@{
+    ViewBag.Title = "JoinEvent";
+    Layout = "~/Views/Shared/_ViewLayout.cshtml";
+}
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfVolunteers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfVolunteers)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Back", "Index")
+</div>
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+   
+
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+
+        window.onload = function () {
+                alert("@ViewBag.Message");
+                //window.location.href = "/Login/Login";
+            };
+        </script>
+    }
+    <script src="~/Scripts/script-custom-validator.js"></script>
+
+
+
+}
+
+

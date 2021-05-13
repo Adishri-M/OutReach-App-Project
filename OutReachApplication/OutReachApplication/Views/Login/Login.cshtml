@@ -1,104 +1,147 @@
-﻿
-@{
+﻿@{ 
     ViewBag.Title = "Login";
-    //Layout = "~/Views/Shared/_Login.cshtml";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
+<style>
+    .form-horizontal {
+        padding: 25px;
+        background-color: lightblue;
+        width: 500px;
+        margin: 0 auto;
+        border: 3px solid #f1f1f1;
+        text-align: center;
+    }
 
-<div class="w3ls-banner">
+    #drop_list, #Id, #pass {
+        width: 50%;
+        margin: auto;
+        padding: 12px 20px;
+        display: inline-block;
+        box-sizing: border-box;
+        align-content: center;
+    }
 
-    <div class="heading">
 
-    </div>
 
-    <div class="container_1">
-        <div class="agile-form">
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
+    button:hover {
+        opacity: 0.7;
+    }
+
+
+
+    /*    button {
+        background-color: cornflowerblue;
+        width: 50%;
+        color: white;
+        height: 20px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+    }*/
+    #btn {
+        margin-right: 60px;
+        align-content: center;
+        /*padding: 12px 20px;*/
+    }
+</style>
+
+
+
+
+<div class="container">
+    <div class="agile-form">
+        @using (Html.BeginForm())
+        {
+@Html.AntiForgeryToken()
+
+
 
                 <div class="form-horizontal">
 
+
+
                     <div class="col-md-12 mb">
                         <div class="form-group">
-                            <label class="form-label">
-                                ROLE
-                                <span class="form-required"> * </span>
-                            </label>
+
                             <div class="form-input">
-                                <select class="form-dropdown rolesel" name="role">
+                                <select class="form-dropdown rolesel" name="role" id="drop_list">
                                     <option value="">Select Role</option>
                                     <option value="Admin"> Admin </option>
                                     <option value="Volunteer"> Volunteer </option>
+
+
 
                                 </select>
                             </div>
                         </div>
                     </div>
 
+
+
                     <div class="col-md-12 mb">
                         <div class="form-group">
-                            <label class="form-label">
-                                ID                                <span class="form-required"> * </span>
-                            </label>
+
                             <div class="form-input">
                                 <input type="text" id="Id" name="Id" placeholder="ID">
                             </div>
                         </div>
                     </div>
 
+
+
                     <div class="col-md-12 mb">
                         <div class="form-group">
-                            <label class="form-label">
-                                Password
-                                <span class="form-required"> * </span>
-                            </label>
+
                             <div class="form-input">
-                                <input type="password" name="Password" placeholder="Password">
+                                <input type="password" id="pass" name="Password" placeholder="Password">
                             </div>
                         </div>
                     </div>
 
 
+
+
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="LOGIN" class="btn btn-primary" />
+                            <input type="submit" id="btn" value="LOGIN" class="btn btn-primary" />
                         </div>
                     </div>
-                </div>
-            }
+                </div>}
 
-        </div>
+
+
     </div>
 </div>
 
 
 
+
+
+
+
+
 @section Scripts {
+
+
 
     @Scripts.Render("~/bundles/jqueryui")
     @Styles.Render("~/Content/cssjqryUi")
 
-    <script type="text/javascript">
 
-        $(document).ready(function () {
-            $('.datepicker').datepicker({
-                dateFormat: "dd/mm/yy",
-                changeMonth: true,
-                changeYear: true,
-                yearRange: "-60:+0"
-            });
 
-        });
-    </script>
+
 
     @if (ViewBag.Message != null)
     {
-        <script type="text/javascript">
+<script type="text/javascript">
+
+
 
             window.onload = function () {
                 alert("@ViewBag.Message");
 
+
+
             };
-        </script>
-    }
+</script>}
 }

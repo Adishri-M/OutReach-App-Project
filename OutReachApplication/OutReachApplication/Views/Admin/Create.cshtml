@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_CommonLayout.cshtml";
+}
+
+
+
+
+
+<div class="w3ls-banner">
+
+    <div class="heading">
+
+    </div>
+
+    <div class="container_1">
+        <div class="agile-form">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+               
+                <div class="form-horizontal">
+
+            <div class="col-md-12 mb">
+                <div class="form-group">
+                    <label class="form-label">
+                        <b>Do's</b>
+                        <br />
+                        1. Do plan your schedule well in advance.
+                        <br />
+                        2. Do List your concerns in a clear way, giving the names of the people concerned and the dates of events that have happened.
+                        <br />
+                        3. Do workout your budget carefully.
+                        <br />
+                        4. Use straightforward, polite language.
+                        <br />
+                        5. Aim to be flexible and try to work together with the organisation to solve the problem.
+                        <br />
+                        <br />
+                        <b>Dont's</b>
+                        <br />
+                        1. Don't leave the invites untill the last minute.
+                        <br />
+                        2. Don't make claims with no basis about the organisations or members of their staff.
+                        <br />
+                        3. Don't use the complaints procedures to reopen concerns which have already been fully investigated and where no evidence of wrongdoing was found.
+                        <br />
+                        4.Don't use offensive or threatening language.
+                        <br />
+                        5. Don't let your attention start to drift onto less important issues.
+                    </label>
+
+
+                    </div>
+                </div>
+            </div>
+
+                
+            }
+        </div>
+            </div>
+
+</div>
+
+
+
+

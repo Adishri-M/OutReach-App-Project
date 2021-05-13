@@ -1,6 +1,7 @@
 ﻿using OutReachApplication.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,7 +14,18 @@ namespace OutReachApplication.Controllers
         // GET: Register
         public ActionResult Index()
         {
-            return View();
+
+            if (Session["PkVolID"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+
+                return View();
+
+            }
+           
         }
         // GET: Volunteers/Create
         //volunteer Registration
@@ -33,11 +45,13 @@ namespace OutReachApplication.Controllers
 
         // POST: Users/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Volunteer volunteer)
         {
             string f_name = Request.Form["FirstName"];
             string l_name = Request.Form["LastName"];
-            DateTime dob = Convert.ToDateTime(Request.Form["DOB"]);
+            CultureInfo culture = new CultureInfo("en-US"); 
+            DateTime dob = Convert.ToDateTime("1/1/2010 12:10:15 PM", culture);
             string gender = Request.Form["Gender"];
             string c_no = Request.Form["ContactNumber"];
             string v_id = Request.Form["VolunteerId"];
@@ -55,9 +69,9 @@ namespace OutReachApplication.Controllers
                 ob.VolunteerPassword = pwd;
                 ob.ConfirmPassword = pwd;
 
-                db.Volunteers.Add(ob);
+                db.Volunteers.Add(volunteer);
                 db.SaveChanges();
-                ViewBag.Message = String.Format("Your Details Are Submited Successfully");
+                ViewBag.Message = String.Format("Registered Successfully with VolunteerId ={0}",v_id);
 
                 //return RedirectToAction("Login", "Login");
             }

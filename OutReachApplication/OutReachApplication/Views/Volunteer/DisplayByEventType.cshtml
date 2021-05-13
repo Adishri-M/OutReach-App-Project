@@ -1,0 +1,79 @@
+﻿@model IEnumerable<OutReachApplication.Models.EventDetail>
+
+@{
+    ViewBag.Title = "DisplayByEventType";
+    Layout = "~/Views/Shared/_ViewLayout.cshtml";
+}
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfVolunteers)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfVolunteers)
+            </td>
+
+            <td>
+                <div class="btn btn-default btn-lg active" role="button" aria-pressed="true" style="color:white">
+                    @Html.ActionLink("Join", "JoinEvent", "Volunteer", routeValues: new { activity = item.Activity }, htmlAttributes: null)
+
+                </div>
+
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back", "Index")
+</div>

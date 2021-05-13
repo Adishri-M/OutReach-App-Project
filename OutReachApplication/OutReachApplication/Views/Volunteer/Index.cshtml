@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap CDN -->
+    <link rel="stylesheet" href=https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 700px;
+            height: 500px
+        }
+        .vertical-menu{
+            width:200px;   
+        }
+        .vertical-menu a {
+            margin: auto;
+            vertical-align: middle;
+            padding: 20px;
+            display:block;
+        }
+        .vertical-menu a:hover{
+            background-color: #ccc;
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+       
+        
+       
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+            <ul class="vertical-menu">
+
+                <li><a href="@Url.Action("VolunteerAttendance", "Volunteer")"><span class="glyphicon glyphicon-ok"></span> Attendance</a></li>
+                <li><a href="@Url.Action("EventIndex", "Volunteer")"><span class="glyphicon glyphicon-eye-open"></span> View Event</a></li>
+                <li><a href="@Url.Action("SearchByLocation", "Volunteer")"><span class="glyphicon glyphicon-list-alt"></span> View Event By Location</a></li>
+                <li><a href="@Url.Action("SearchByEventType", "Volunteer")"><span class="glyphicon glyphicon-list-alt"></span> View Event By EventType</a></li>
+                <li><a href="@Url.Action("VolunteerFeedback", "Volunteer")"><span class="glyphicon glyphicon-pencil"></span> Feedback</a></li>
+
+            </ul>
+        </div>
+        <div class="column" >
+            <img src="~/Images/image9.jpg" class="center">
+        </div>
+    </div>
+</body>
+
+
+
+</html>

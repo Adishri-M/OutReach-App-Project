@@ -7,13 +7,21 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-
+    <style>
+       /* .container bg-info{
+            width:100%;
+        }
+*/
+        #EndNavigation{
+            width:100%
+        }
+    </style>
+   
 
 
 </head>
 <body>
-    <div class="navbar navbar-collapse-xs navbar-expand-md fixed-top bg-info">
+    <nav class="navbar navbar-collapse-xs navbar-expand-md fixed-top bg-info">
 
         <div class="container">
             <div class="navbar-header">
@@ -27,12 +35,19 @@
 
 
             </div>
+            <div>
+                <ul class="nav navbar-nav">
+                        <li><a href="@Url.Action("Index","Admin")"> OutReach</a></li>
+
+                    </ul>
+
+            </div>
             <div class="navbar-collapse collapse">
 
-                <ul class="nav navbar-nav navbar-expand-md navbar-right">
-                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-                    <li><a href="@Url.Action("Login","Login")"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                    <li><a href="@Url.Action("Create","Register")"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="@Url.Action("Index","Home")"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li><a href="@Url.Action("Login","Login")"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="@Url.Action("Create","Register")"><span class="glyphicon glyphicon-user"></span> Register</a></li>
                 </ul>
 
             </div>
@@ -40,7 +55,7 @@
 
 
         </div>
-    </div>
+    </nav>
     <div class="container">
         @RenderBody()
         <hr />
@@ -54,11 +69,11 @@
 
 
     </div>
-    <div class=" container bg-info ">
+    <div class=" container bg-info" id="EndNavigation">
         <ul class="nav navbar-nav">
 
-            <li><a href="@Url.Action("About","Home")"><span class="glyphicon glyphicon-book"></span>About Us</a></li>
-            <li><a href="@Url.Action("Contact","Home")"><span class="glyphicon glyphicon-earphone"></span>Contact Us</a></li>
+            <li><a href="@Url.Action("About","Home")"><span class="glyphicon glyphicon-book"></span> About Us</a></li>
+            <li><a href="@Url.Action("Contact","Home")"><span class="glyphicon glyphicon-earphone"></span> Contact Us</a></li>
         </ul>
     </div>
     @Scripts.Render("~/bundles/jquery")

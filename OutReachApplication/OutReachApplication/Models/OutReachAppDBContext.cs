@@ -14,6 +14,9 @@ namespace OutReachApplication.Models
         }
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Volunteer> Volunteers { get; set; }
-        public virtual DbSet<Event> Events { get; set; }
+        public virtual DbSet<EventDetail> EventDetails { get; set; }
+
+        public virtual DbSet<Attendance> Attendances { get; set; }
+        public virtual DbSet<Feedback>  Feedbacks { get; set; }
     }
 }

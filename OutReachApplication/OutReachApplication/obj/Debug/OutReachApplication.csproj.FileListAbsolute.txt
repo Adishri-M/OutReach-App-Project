@@ -80,6 +80,11 @@ C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\Out
 C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.csproj.CopyComplete
 C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.dll
 C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.pdb
-C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.Migrations.CreateTable.resources
+C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.Migrations.OutReachApp.resources
 C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.csproj.GenerateResource.cache
+C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.Migrations.AddColumnPlace.resources
+C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.Migrations.AddPrimaryKeyColumn.resources
+C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.Migrations.AddColumn.resources
+C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.Migrations.ChangeColumnName.resources
+C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.Migrations.RemoveColumn.resources
 C:\892557\Training Project\OutReachApplication\OutReachApplication\obj\Debug\OutReachApplication.csprojAssemblyReference.cache
